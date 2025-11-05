@@ -1,0 +1,59 @@
+@media (max-width: 600px) {
+  header {
+    flex-direction: column;
+    position: relative;
+    width: 100%;
+  }
+  .logo {
+    margin-left: 10%;
+  }
+  .mobileView {
+    width: 100%;
+  }
+
+  header nav {
+    display: none;
+    top: 70px;
+    background: linear-gradient(90deg, #00aaff, #00d9ff);
+    width: 100%;
+  }
+
+  nav ul {
+    flex-direction: column;
+  }
+
+  .normalView {
+    width: 100%; /* li through all display width*/
+  }
+
+  header nav li {
+    display: block;
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+  .menu-icon {
+    display: block;
+    color: white;
+    font-size: 23px;
+  }
+
+  .clinicContainer {
+    flex-direction: column;
+    align-items: center;
+  }
+  .employee {
+    text-align: center;
+    height: 30vh;
+  }
+
+  .employee .clinicImgContainer {
+    width: 100%;
+  }
+}
+
+@media (min-width: 600px) {
+  header nav {
+    display: block !important;
+  }
+}
