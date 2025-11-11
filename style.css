@@ -339,3 +339,12 @@ footer p {
   object-fit: cover;
   transform: translate(-20px, 35px); /* posun podle původního x/y */
 }
+
+.actualChange,
+.contactChange,
+.firstPart,
+.insuranceChange {
+  opacity: 0;
+  transform: translateX(80px);
+  will-change: transform, opacity;
+}

@@ -147,27 +147,21 @@ allQuestions.forEach((questionEl) => {
 });
 
 /*Animations for page reloade*/
-gsap.utils
-  .toArray(".actualChange, .contactChange, .firstPart, .insuranceChange ")
-  .forEach((element) => {
-    gsap.fromTo(
-      element,
-      { x: -100, opacity: 0 },
-      {
+ScrollTrigger.batch(
+  ".actualChange, .contactChange, .firstPart, .insuranceChange",
+  {
+    start: "top 80%",
+    once: true,
+    onEnter: (batch) =>
+      gsap.to(batch, {
         x: 0,
         opacity: 1,
-        duration: 1.5,
+        duration: 1.2,
         ease: "power2.out",
-        scrollTrigger: {
-          trigger: element,
-          start: "top 80%",
-          end: "top -1%",
-          once: true,
-          toggleActions: "play none none none", // Opakuje se nahoru/dolů
-        },
-      }
-    );
-  });
+        stagger: 0.12, // když jich vleze víc naráz → hezky postupně
+      }),
+  }
+);
 
 gsap.utils.toArray(".opening, .mapsGoogle, .secondPart").forEach((element) => {
   gsap.fromTo(
