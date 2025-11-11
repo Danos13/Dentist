@@ -62,7 +62,7 @@ svgFile.forEach((svgfile, indexs) => {
       if (indext == indexs * 2 || indext == indexs * 2 + 1) {
         item.style.fontSize = "1.3rem";
       }
-    }); // Zvětší písmo
+    }); // zmensi písmo
   });
 });
 
@@ -87,7 +87,7 @@ svgFiles.forEach((svgfile, indexs) => {
       if (indext == indexs) {
         item.style.fontSize = "1.3rem";
       }
-    }); // Zvětší písmo
+    }); // zmensi písmo
   });
 });
 
@@ -162,6 +162,7 @@ gsap.utils
           trigger: element,
           start: "top 80%",
           end: "top -1%",
+          once: true,
           toggleActions: "play none none none", // Opakuje se nahoru/dolů
         },
       }
@@ -180,6 +181,7 @@ gsap.utils.toArray(".opening, .mapsGoogle, .secondPart").forEach((element) => {
       scrollTrigger: {
         trigger: element,
         start: "top 80%",
+        once: true,
         end: "top -1%",
         toggleActions: "play none none none", // Opakuje se nahoru/dolů
       },
