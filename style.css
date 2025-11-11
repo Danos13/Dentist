@@ -345,6 +345,14 @@ footer p {
 .firstPart,
 .insuranceChange {
   opacity: 0;
+  transform: translateX(-80px);
+  will-change: transform, opacity;
+}
+
+.opening,
+.mapsGoogle,
+.secondPart {
+  opacity: 0;
   transform: translateX(80px);
   will-change: transform, opacity;
 }
