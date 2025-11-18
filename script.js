@@ -41,6 +41,23 @@ menuIcon.addEventListener("click", () => {
   }
 });
 
+/* Navigation */
+
+gsap.fromTo(
+  "header",
+  { height: "70px" }, // výchozí stav
+  {
+    height: "40px", // cílový stav
+    ease: "power2.out",
+    scrollTrigger: {
+      trigger: "body",
+      start: "top top",
+      end: "+=200",
+      scrub: true,
+    },
+  }
+);
+
 /*animation with team images */
 
 const svgFile = document.querySelectorAll(".bothText");
@@ -91,23 +108,6 @@ svgFiles.forEach((svgfile, indexs) => {
   });
 });
 
-/* Navigation */
-
-gsap.fromTo(
-  "header",
-  { height: "70px" }, // výchozí stav
-  {
-    height: "40px", // cílový stav
-    ease: "power2.out",
-    scrollTrigger: {
-      trigger: "body",
-      start: "top top",
-      end: "+=200",
-      scrub: true,
-    },
-  }
-);
-
 /*some info about doctor*/
 
 const allQuestions = document.querySelectorAll(".faq-question");
@@ -148,7 +148,7 @@ allQuestions.forEach((questionEl) => {
 
 /*Animations for page reloade*/
 ScrollTrigger.batch(
-  ".actualChange, .contactChange, .firstPart, .insuranceChange",
+  ".actualChange, .contactChange,  .insuranceChange, .aboutDoctor, .motto, .motto2, .opening, .mapsGoogle",
   {
     start: "top 80%",
     once: true,
@@ -163,16 +163,14 @@ ScrollTrigger.batch(
   }
 );
 
-ScrollTrigger.batch(".opening, .mapsGoogle, .secondPart", {
+ScrollTrigger.batch(" .firstPart, .secondPart", {
   start: "top 80%",
   once: true,
   onEnter: (batch) =>
     gsap.to(batch, {
-      x: 0,
       opacity: 1,
-      duration: 1.2,
+      duration: 4,
       ease: "power2.out",
-      stagger: 0.12, // když jich vleze víc naráz → hezky postupně
     }),
 });
 

@@ -1,59 +1,172 @@
-@media (max-width: 600px) {
-  header {
-    flex-direction: column;
-    position: relative;
-    width: 100%;
-  }
-  .logo {
-    margin-left: 10%;
-  }
-  .mobileView {
-    width: 100%;
+/* Tablet and small desktop adjustments */
+@media (max-width: 900px) {
+  .clinicContainer {
+    width: 90%;
   }
 
+  .clinicHeading {
+    margin-left: 0;
+    width: 100%;
+    margin-top: 1rem;
+    text-align: center;
+  }
+
+  .motto,
+  .motto2 {
+    width: 90%;
+    margin-left: 5%;
+  }
+
+  .aboutDoctor {
+    width: 90%;
+    margin: 1rem auto;
+  }
+
+  .opening-hours,
+  .insuranceChange,
+  .actualChange,
+  .contactChange {
+    width: 90%;
+    margin: 1rem auto;
+  }
+
+  .mapsGoogle {
+    width: 90%;
+    height: 300px;
+  }
+}
+
+/* Mobile-specific layout (phones) */
+@media (max-width: 600px) {
+  header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 0 0.5rem;
+  }
+
+  .logo {
+    margin-left: 0;
+    margin-right: auto;
+  }
+
+  .logo i {
+    font-size: 36px;
+  }
+
+  .mobileView {
+    width: 80%;
+  }
+
+  /* hide nav by default and position it absolutely so it overlays content when opened */
   header nav {
     display: none;
+    position: absolute;
+    left: 0;
     top: 70px;
-    background: linear-gradient(90deg, #00aaff, #00d9ff);
+    background: var(--backgroundColorNavigation);
     width: 100%;
+    z-index: 5;
+    padding: 0.5rem 0;
   }
 
   nav ul {
     flex-direction: column;
-  }
-
-  .normalView {
-    width: 100%; /* li through all display width*/
+    align-items: center;
+    gap: 0.5rem;
   }
 
   header nav li {
     display: block;
     text-align: center;
-    margin-top: 10px;
-    margin-bottom: 10px;
+    margin: 0.5rem 0;
   }
+
   .menu-icon {
     display: block;
     color: white;
-    font-size: 23px;
+    font-size: 24px;
+    margin-right: 1rem;
   }
 
+  /* clinic layout stacks vertically */
   .clinicContainer {
     flex-direction: column;
     align-items: center;
-  }
-  .employee {
-    text-align: center;
-    height: 30vh;
+    width: 95%;
   }
 
-  .employee .clinicImgContainer {
+  .employee {
+    text-align: center;
     width: 100%;
+    height: auto;
+    padding: 1rem 0;
+  }
+
+  .toothPicture {
+    width: 60%;
+    height: auto;
+  }
+
+  .clinicHeading,
+  .motto,
+  .motto2 {
+    width: 95%;
+    margin: 0.5rem auto;
+    text-align: center;
+  }
+
+  .aboutDoctor {
+    width: 95%;
+    margin: 0.5rem auto;
+  }
+
+  /* show the mobile duplicate and hide the desktop-only original */
+  .mobile-only {
+    display: block;
+    width: 95%;
+    margin: 0.5rem auto;
+  }
+
+  .desktop-only {
+    display: none;
+  }
+
+  li.faq-item {
+    width: 100%;
+  }
+
+  .mapsGoogle {
+    width: 95%;
+    height: 250px;
+    margin: 1rem auto;
+  }
+
+  .opening-hours {
+    width: 95%;
+    margin: 1rem auto;
+    font-size: 1rem;
+  }
+
+  .contactChange,
+  .insuranceChange,
+  .actualChange {
+    width: 95%;
+    margin: 1rem auto;
+  }
+
+  footer {
+    padding: 1rem 0;
   }
 }
 
-@media (min-width: 600px) {
+/* Ensure desktop shows nav */
+@media (min-width: 601px) {
   header nav {
     display: block !important;
+    position: static;
+  }
+  .menu-icon {
+    display: none;
   }
 }

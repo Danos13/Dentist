@@ -9,6 +9,21 @@
       src="https://kit.fontawesome.com/8ba26cb1dc.js"
       crossorigin="anonymous"
     ></script>
+    <link
+      rel="icon"
+      type="image/png"
+      href="Images/favicon-96x96.png"
+      sizes="96x96"
+    />
+    <link rel="icon" type="image/svg+xml" href="Images/favicon.svg" />
+    <link rel="shortcut icon" href="Images/favicon.ico" />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="Images/apple-touch-icon.png"
+    />
+    <meta name="apple-mobile-web-app-title" content="MDDr. Swierczek" />
+    <link rel="manifest" href="Images/site.webmanifest" />
 
     <title>MDDr. Eva Świerczek</title>
   </head>
@@ -30,7 +45,6 @@
             <li><a href="#OpeningTimeId">Ordinační hodiny</a></li>
             <li><a href="#ClinicId">O nás</a></li>
             <li><a href="#ContactId">Kontakt</a></li>
-
             <li><a href="#InsuranceId">Pojišťovny</a></li>
           </ul>
         </nav>
@@ -124,6 +138,7 @@
         přístup. Ordinaci jsem si otevřela s přáním nabídnout péči, která bude
         nejen kvalitní, ale i lidská.
       </p>
+
       <div class="clinic">
         <div class="clinicContainer">
           <div class="employee">
@@ -136,6 +151,41 @@
 
             <div class="text">MDDr. Eva Świerczek</div>
           </div>
+          <!-- mobile-only duplicate of aboutDoctor: shown only on small screens so it appears between the two employees -->
+          <section class="aboutDoctor mobile-only">
+            <ul class="faq">
+              <li class="faq-item">
+                <div class="faq-question">Vzdělání</div>
+                <div class="faq-answer">
+                  <p>
+                    2016 - 2021 Lékařská fakulta Univerzity Palackého v Olomouci
+                  </p>
+                </div>
+              </li>
+            </ul>
+
+            <ul class="faq">
+              <li class="faq-item">
+                <div class="faq-question">Profesní zkušenosti</div>
+                <div class="faq-answer">
+                  <p>2021 - 2024 zaměstnankyně soukromé zubní ordinace</p>
+                  <p>2025 - vlastní soukromá praxe</p>
+                </div>
+              </li>
+            </ul>
+
+            <ul class="faq">
+              <li class="faq-item">
+                <div class="faq-question">Specializace</div>
+                <div class="faq-answer">
+                  <p>Estetická stomatologie</p>
+                  <p>Protetická stomatologie</p>
+                  <p>Endodoncie</p>
+                  <p>Dětská stomatologie</p>
+                </div>
+              </li>
+            </ul>
+          </section>
           <div class="employee">
             <div class="text">Sestra</div>
             <object
@@ -150,7 +200,7 @@
       </div>
     </section>
 
-    <section class="aboutDoctor firstPart">
+    <section class="aboutDoctor desktop-only">
       <ul class="faq">
         <li class="faq-item">
           <div class="faq-question">Vzdělání</div>
@@ -187,7 +237,7 @@
     <section class="secondPart">
       <h1 class="clinicHeading">Ordinace</h1>
 
-      <p class="motto">
+      <p class="motto2">
         K poskytování kvalitní péče mám ordinaci vybavenou moderním zubním
         křeslem, digitálním rentgenem a dalším špičkovým vybavením. Ordinace má
         přístup k OPG, které je sdílené mezi více zubními lékaři. Při ošetření
