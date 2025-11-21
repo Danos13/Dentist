@@ -28,22 +28,10 @@ const myClinic = new Clinic();
 const menuIcon = document.querySelector(".menu-icon");
 const menuList = document.querySelector("nav");
 const hamburgerIcon = document.querySelector(".choosen");
+const header = document.querySelector("header");
+const buttons = document.querySelectorAll(".button");
 
-menuIcon.addEventListener("click", () => {
-  if (hamburgerIcon.classList[2] === "fa-bars") {
-    myClinic.addClass(hamburgerIcon, "fa-xmark");
-    myClinic.removeClass(hamburgerIcon, "fa-bars");
-    myClinic.displayOrDisapeare(menuList, "block");
-  } else {
-    myClinic.addClass(hamburgerIcon, "fa-bars");
-    myClinic.removeClass(hamburgerIcon, "fa-xmark");
-    myClinic.displayOrDisapeare(menuList, "none");
-  }
-});
-
-/* Navigation */
-
-gsap.fromTo(
+const headerAnimation = gsap.fromTo(
   "header",
   { height: "70px" }, // výchozí stav
   {
@@ -57,6 +45,30 @@ gsap.fromTo(
     },
   }
 );
+
+menuIcon.addEventListener("click", () => {
+  if (hamburgerIcon.classList[2] === "fa-bars") {
+    myClinic.addClass(hamburgerIcon, "fa-xmark");
+    myClinic.removeClass(hamburgerIcon, "fa-bars");
+    myClinic.displayOrDisapeare(menuList, "block");
+    headerAnimation.scrollTrigger.disable();
+    header.style.height = "70px";
+  } else {
+    myClinic.addClass(hamburgerIcon, "fa-bars");
+    myClinic.removeClass(hamburgerIcon, "fa-xmark");
+    myClinic.displayOrDisapeare(menuList, "none");
+    headerAnimation.scrollTrigger.enable();
+  }
+});
+
+buttons.forEach((button) => {
+  button.addEventListener("click", () => {
+    myClinic.addClass(hamburgerIcon, "fa-bars");
+    myClinic.removeClass(hamburgerIcon, "fa-xmark");
+    myClinic.displayOrDisapeare(menuList, "none");
+    headerAnimation.scrollTrigger.enable();
+  });
+});
 
 /*animation with team images */
 
@@ -148,14 +160,14 @@ allQuestions.forEach((questionEl) => {
 
 /*Animations for page reloade*/
 gsap.set(
-  ".actualChange, .contactChange,  .insuranceChange, .aboutDoctor, .motto",
+  ".actualChange, .secondPart, .contactChange,  .insuranceChange, .aboutDoctor, .motto",
   {
     opacity: 0,
     x: -40,
   }
 );
 ScrollTrigger.batch(
-  ".actualChange, .contactChange,  .insuranceChange, .aboutDoctor, .motto",
+  ".actualChange, .secondPart, .contactChange,  .insuranceChange, .aboutDoctor, .motto",
   {
     start: "top 80%",
     once: true,
@@ -163,34 +175,24 @@ ScrollTrigger.batch(
       gsap.to(batch, {
         x: 0,
         opacity: 1,
-        duration: 3,
+        duration: 2,
         ease: "power2.out",
       }),
   }
 );
-gsap.set(".motto2, .opening, .mapsGoogle", { opacity: 0, x: 40 });
+gsap.set(".firstPart,  .motto2, .opening, .mapsGoogle", {
+  opacity: 0,
+  x: 40,
+});
 
-ScrollTrigger.batch(".motto2, .opening, .mapsGoogle", {
+ScrollTrigger.batch(".firstPart,  .motto2, .opening, .mapsGoogle", {
   start: "top 80%",
   once: true,
   onEnter: (batch) =>
     gsap.to(batch, {
       x: 0,
       opacity: 1,
-      duration: 3,
-      ease: "power2.out",
-    }),
-});
-
-gsap.set(".firstPart, .secondPart ", { opacity: 0 });
-
-ScrollTrigger.batch(".firstPart, .secondPart ", {
-  start: "top 80%",
-  once: true,
-  onEnter: (batch) =>
-    gsap.to(batch, {
-      opacity: 1,
-      duration: 3,
+      duration: 2,
       ease: "power2.out",
     }),
 });

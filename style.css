@@ -2,7 +2,6 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  outline: 1px solid red;
 }
 
 :root {
@@ -27,10 +26,13 @@
 
 body {
   overflow-x: hidden !important;
+  width: 100%;
+  position: relative;
 }
 
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
 html,
