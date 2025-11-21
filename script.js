@@ -147,8 +147,15 @@ allQuestions.forEach((questionEl) => {
 });
 
 /*Animations for page reloade*/
+gsap.set(
+  ".actualChange, .contactChange,  .insuranceChange, .aboutDoctor, .motto",
+  {
+    opacity: 0,
+    x: -40,
+  }
+);
 ScrollTrigger.batch(
-  ".actualChange, .contactChange,  .insuranceChange, .aboutDoctor, .motto, .motto2, .opening, .mapsGoogle",
+  ".actualChange, .contactChange,  .insuranceChange, .aboutDoctor, .motto",
   {
     start: "top 80%",
     once: true,
@@ -156,20 +163,34 @@ ScrollTrigger.batch(
       gsap.to(batch, {
         x: 0,
         opacity: 1,
-        duration: 1.2,
+        duration: 3,
         ease: "power2.out",
-        stagger: 0.12, // když jich vleze víc naráz → hezky postupně
       }),
   }
 );
+gsap.set(".motto2, .opening, .mapsGoogle", { opacity: 0, x: 40 });
 
-ScrollTrigger.batch(" .firstPart, .secondPart", {
+ScrollTrigger.batch(".motto2, .opening, .mapsGoogle", {
+  start: "top 80%",
+  once: true,
+  onEnter: (batch) =>
+    gsap.to(batch, {
+      x: 0,
+      opacity: 1,
+      duration: 3,
+      ease: "power2.out",
+    }),
+});
+
+gsap.set(".firstPart, .secondPart ", { opacity: 0 });
+
+ScrollTrigger.batch(".firstPart, .secondPart ", {
   start: "top 80%",
   once: true,
   onEnter: (batch) =>
     gsap.to(batch, {
       opacity: 1,
-      duration: 4,
+      duration: 3,
       ease: "power2.out",
     }),
 });

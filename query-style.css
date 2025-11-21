@@ -55,7 +55,7 @@
   }
 
   .mobileView {
-    width: 80%;
+    width: 100%;
   }
 
   /* hide nav by default and position it absolutely so it overlays content when opened */

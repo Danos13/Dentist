@@ -2,6 +2,7 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  outline: 1px solid red;
 }
 
 :root {
@@ -25,11 +26,16 @@
 }
 
 body {
-  overflow-x: hidden;
+  overflow-x: hidden !important;
 }
 
 html {
   scroll-behavior: smooth;
+}
+
+html,
+body {
+  max-width: 100%;
 }
 
 section {
@@ -53,13 +59,15 @@ section {
 /*-------------HEADER-NAVIGATION-----------------*/
 
 header {
+  position: fixed;
   display: flex;
   align-items: center;
   justify-content: space-between;
   background: var(--backgroundColorNavigation);
   height: 70px;
-  position: fixed;
-  width: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
   z-index: 1;
   transition: height 0.3s ease;
   will-change: height;
@@ -72,7 +80,7 @@ header {
 }
 
 .logo {
-  margin-left: 50%;
+  margin-left: auto;
 }
 
 .logo i {
@@ -283,10 +291,10 @@ caption {
 /*-------------Maps---------------*/
 
 .mapsGoogle {
-  width: 50%;
   height: 400px;
   margin: 20px auto;
   border-radius: 1%;
+  width: 50%;
 }
 
 /*-------------Contact---------------*/
@@ -323,17 +331,20 @@ footer p {
   color: white;
 }
 
-/*-------------gsapImgAnimation-----------------*/
+/*-------------gsapImgAnimation-----------------
 
 .actualChange,
 .contactChange,
 .aboutDoctor,
 .motto,
-.insuranceChange {
+.insuranceChange .firstPart,
+.secondPart .motto2,
+.opening,
+.mapsGoogle {
   opacity: 0;
-  transform: translateX(-80px);
-  will-change: transform, opacity;
+  will-change: opacity;
 }
+  */
 
 /* helper visibility classes for desktop/mobile duplicates */
 .mobile-only {
@@ -341,18 +352,4 @@ footer p {
 }
 .desktop-only {
   display: block;
-}
-
-.motto2,
-.opening,
-.mapsGoogle {
-  opacity: 0;
-  transform: translateX(80px);
-  will-change: transform, opacity;
-}
-
-.firstPart,
-.secondPart {
-  opacity: 0;
-  will-change: opacity;
 }
