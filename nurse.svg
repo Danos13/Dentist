@@ -17,12 +17,12 @@
   </defs>
 
   <image
-    x="0"
-    y="0"
-    width="200"
-    height="270"
+    x="-55"
+    y="30"
+    width="350"
+    height="250"
     href="Images/nurse.png"
     clip-path="url(#toothClip)"
-    preserveAspectRatio="xMidYMid slice"
+    preserveAspectRatio="xMidYMid meet"
   />
 </svg>
