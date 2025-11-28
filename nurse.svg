@@ -3,6 +3,7 @@
   width="230"
   height="300"
   viewBox="0 0 200 270"
+  preserveAspectRatio="xMidYMid meet"
   xmlns="http://www.w3.org/2000/svg"
 >
   <defs>
@@ -16,11 +17,12 @@
   </defs>
 
   <image
-    x="-55"
-    y="30"
-    width="350"
-    height="250"
+    x="0"
+    y="0"
+    width="200"
+    height="270"
     href="Images/nurse.png"
     clip-path="url(#toothClip)"
+    preserveAspectRatio="xMidYMid slice"
   />
 </svg>
